@@ -14,6 +14,12 @@ To start a web server for the application, run:
 
     lein ring server
 
+You can also start the web server with 
+    
+    lein ring server-headless
+
+This will start up the web server and not open a new window for you
+
 ## License
 
 Copyright © 2020 FIXME
