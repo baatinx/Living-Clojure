@@ -14,6 +14,14 @@ To start a web server for the application, run:
 
     lein ring server
 
+    lein ring server-headless
+
+    lein cljsbuild auto
+
+    lein trampoline cljsbuild repl-rhino
+
+    lein trampoline cljsbuild repl-listen
+
 You can also start the web server with 
     
     lein ring server-headless

@@ -6,3 +6,11 @@ likely not going to manually craft the response on each of them. In this case, w
 Ring middleware to automate this process for us. The Ring-JSON library does just this. It
 will automatically convert any response with a Clojure collection as a body into JSON for
 you, and it uses Cheshire to do it
+
+2. It is good to remember that there are differences between Clojure and ClojureScript
+although they do share core language structures and features. These are the major
+differences to take note of:
+    1. ClojureScript has JavaScript interop rather than Java.
+    2. Although there are atoms, there are no agents or refs.
+    3. In ClojureScript, only integer and floating-point numbers are supported.
+    4. Of course, ClojureScript compiles to JavaScript.
