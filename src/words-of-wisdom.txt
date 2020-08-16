@@ -1,0 +1,8 @@
+;; ****************************************************************************************************
+;; chapter 7 - Creating Web Applications with Clojure
+
+1. If you are planning on creating an API where all the routes will be JSON, you are most
+likely not going to manually craft the response on each of them. In this case, we can use
+Ring middleware to automate this process for us. The Ring-JSON library does just this. It
+will automatically convert any response with a Clojure collection as a body into JSON for
+you, and it uses Cheshire to do it
