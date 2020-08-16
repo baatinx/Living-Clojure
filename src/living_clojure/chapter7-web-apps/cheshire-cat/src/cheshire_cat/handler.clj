@@ -5,7 +5,8 @@
 
             ;;[cheshire.core :as json]
             [ring.middleware.json :as ring-json]
-            [ring.util.response :as rr]))
+            [ring.util.response :as rr]
+            [liberator.core :refer :all]))
 
 ;; --
 
@@ -27,6 +28,18 @@
   (GET "/cheshire-cat" []
        (rr/response {:name "Cheshire Cat"
                      :status "grinning"}))
+  (ANY "/cat" []
+    (resource :available-media-types ["text/plain"
+                                      "text/html"
+                                      "application/json"]
+             :handle-ok 
+              #(let [media-type (get-in % [:representation :media-type])]
+                 (case media-type
+                   "text/plain" "Cat"
+                   "text/html" "<html><h2>Cat</h2></html>"
+                   "application/json" {:cat true}))
+              
+              :handle-not-acceptable "No Cats Here!"))
   (route/not-found "Not Found"))
 
 (def app

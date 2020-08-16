@@ -11,3 +11,4 @@ pom.xml.asc
 .calva
 /out
 /resources/public/main.js
+curl
